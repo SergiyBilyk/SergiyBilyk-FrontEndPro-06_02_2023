@@ -59,11 +59,13 @@ let users = [
 let balanceSum = 0;
 const arrPhone = [];
 
+
 for (let user of users) {
-    balanceSum += +user.balance.replace(/[^0-9.]/g, '')
-    if (user.balance.replace(/[^0-9.]/g, '') > 2000) {
-        arrPhone.push(user.phone)
+    let balance = +user.balance.replace(/[^\d.]/g, '');
+    balanceSum += balance;
+    if (balance > 2000) {
+        arrPhone.push(user.phone);
     }
 }
-alert(`Телефонні номери користувачів, у яких баланс більше 2000 доларів ${arrPhone}
+console.log(`Телефонні номери користувачів, у яких баланс більше 2000 доларів ${arrPhone}
 Cума всіх балансів користувачів ${balanceSum.toFixed(2)} доларів`);
