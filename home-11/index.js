@@ -1,21 +1,21 @@
-const arr = [null, 2, 5, undefined, "ssf", 45, 5, -5, 10, 0, 25, undefined]
+const arr = [null, 2, 5, undefined, "ssf", 45, 5, -5, 10, 0, 25, undefined];
 let average = 0;
 
-function getAverage (arr) {
+function getAverage(arr) {
     let sum = 0;
     let count = 0;
-    arr.filter(function(element) {
+    arr.forEach(function(element) {
         if (typeof element === "number") {
-            sum += element 
-            count++
+            sum += element;
+            count++;
         }
-        return
+        return;
     });
-    return average = (sum / count).toFixed(2)
+    return (sum / count).toFixed(2);
 }
 
-const result = getAverage (arr)
-console.log('Cереднє арифметичне лише числових елементів даного масиву ' + result)
+const result = getAverage(arr);
+console.log('Cереднє арифметичне лише числових елементів даного масиву ' + result);
 
 
 
@@ -24,67 +24,57 @@ console.log('Cереднє арифметичне лише числових ел
 const x = +prompt("2) Введіть перше число");
 const y = +prompt("Введіть друге число");
 const znak = prompt("Введите знак бажаної операції(+, -, *, /, %, ^ )");
-let result2 = 0;
 
 function doMath(x, znak, y) {
     switch (znak) {
         case '+':
-            return result2 = x + y;
+            return x + y;
         case '-':
-            return result2 = x - y;
+            return x - y;
         case '*':
-            return result2 = x * y;
+            return x * y;
         case '/':
-            return result2 = x / y;
+            return x / y;
         case '%':
-            return result2 = x % y;
+            return x % y;
         case '^':
-            return result2 = Math.pow(x,y);
+            return Math.pow(x,y);
         default: 
-            result2 ="Щось введено невірно"
+            return  "Щось введено невірно";
     }
-    return result2
 }
 console.log(doMath(x, znak, y));
 
 
 
-
-
-
-
-function getMax() {
-    const arrNumbers = prompt('3) Введіть массив чисел через пробіл').split(' ');
-    result3 = +arrNumbers[0]
+function getMax(arrNumbers) {
+    let result3 = arrNumbers[0];
     arrNumbers.forEach((item) => {
-        if(result3 < +item)
+        if (result3 < item)
         {
-            result3 = item
+            result3 = item;
         }
     })
-    return result3
+    return result3;
 }
-console.log(getMax())
+console.log(getMax([5, 6, 81, 33, 153, 12]));
 
 
 
 
-function delSymbol() {
-    let words = prompt('Введіть фразу');
-    let symbols = prompt('Введіть символи без пробілу');
+
+function delSymbol(words, symboslArr) {
     let wordsArr = words.split("");
-    let symboslArr = symbols.split("");
-
-    for(let i = 0; i < wordsArr.length; i++) {
-        for(let k of symboslArr) {
+    for (let i = 0; i < wordsArr.length; i++) {
+        for (let k of symboslArr) {
             if (wordsArr[i] === k) {
                 wordsArr.splice(i, 1);
-                console.log(i--);
+                    i--;
             }
         }
     }
     return wordsArr.join("");
 }
 
-const result4 = delSymbol();
+const result4 = delSymbol(" hello world", ['l', 'd']);
 console.log(result4);
