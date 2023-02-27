@@ -50,8 +50,7 @@ console.log(doMath(x, znak, y));
 function getMax(arrNumbers) {
     let result3 = arrNumbers[0];
     arrNumbers.forEach((item) => {
-        if (result3 < item)
-        {
+        if (result3 < item) {
             result3 = item;
         }
     })
