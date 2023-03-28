@@ -67,7 +67,7 @@ function createContentList(e) {
     let clickedProduct = e.target.innerText;
     let categoryData = categories.find((category) => category.name === clickedProduct);
     let productData = Object.entries(categoryData);
-    let productInfo= ``
+    let productInfo= ``;
     productData.forEach(([key, value]) => {
         productInfo += `<p>${value}</p>`;
     });
@@ -78,7 +78,7 @@ function createContentList(e) {
 function createBtn() {
     let btn = document.createElement('button');
     btn.innerHTML = 'Купити';
-    btn.addEventListener('click', clickBtn)
+    btn.addEventListener('click', clickBtn);
     return btn;
 }
 
