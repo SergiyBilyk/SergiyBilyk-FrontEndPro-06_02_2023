@@ -54,23 +54,16 @@ function getCaregory(e) {
     }
 }
 
-function createContent(obj) {
-    let content = ``;
-    for (let category of obj) {
-        content +=  `<li>${category.name}</li>`;
-    }
-    return content;
+function createContent(mas) {
+    return mas.reduce((acc, item) => (acc += `<li>${item.name}</li>`), '');
 }
 
 function createContentList(e) {
     e.preventDefault();
     let clickedProduct = e.target.innerText;
     let categoryData = categories.find((category) => category.name === clickedProduct);
-    let productData = Object.entries(categoryData);
-    let productInfo= ``;
-    productData.forEach(([key, value]) => {
-        productInfo += `<p>${value}</p>`;
-    });
+    let productData = Object.values(categoryData);
+    let productInfo = productData.reduce((acc, item) => (acc += `<p>${item}</p>`), '');
     product.innerHTML = productInfo ;
     product.append(createBtn());
 }
