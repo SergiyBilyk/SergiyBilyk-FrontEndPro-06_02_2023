@@ -4,14 +4,14 @@ function Person(name, male) {
     this.name = name;
     this.male = male;
     this.getPersonInfo = function() {
-        console.log(`Ім'я: ${this.name}, стать: ${this.male}`)
+        console.log(`Ім'я: ${this.name}, стать: ${this.male}`);
     }
 }
 
 function Apartment() {
     this.inhabitantApartment = [];
     this.addPerson = function(person) {
-        this.inhabitantApartment.push(person)
+        this.inhabitantApartment.push(person);
     }
 }
 function House(maxApartment) {
@@ -19,9 +19,9 @@ function House(maxApartment) {
     this.maxApartment = maxApartment;
     this.addApartment = function(apartment) {
         if(this.apartments.length < this.maxApartment){
-            this.apartments.push(apartment)
+            this.apartments.push(apartment);
         } else{
-            console.log('Кількість квартир в будинку досягла максимуму')
+            console.log('Кількість квартир в будинку досягла максимуму');
         }
     }
 }
