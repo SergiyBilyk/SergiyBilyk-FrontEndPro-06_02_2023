@@ -1,45 +1,49 @@
 'use strict'
 
-function Person(name, male) {
-    this.name = name;
-    this.male = male;
-    this.getPersonInfo = function() {
-        console.log(`Ім'я: ${this.name}, стать: ${this.male}`);
+class Hamburger {
+    constructor(size, stuffing) {
+        this.size = size;
+        this.stuffing = stuffing;
+        this.topping = [];
+    }
+    static SIZE_SMALL = {price: 50, callories: 20};
+    static SIZE_BIG = {price: 100, callories: 40};
+    static STUFFING_CHEESE = {price: 10, callories: 20};
+    static STUFFING_SALAD = {price: 20, callories: 5};
+    static STUFFING_POTATO = {price: 15, callories: 10};
+    static TOPPING_MAYO = {price: 15, callories: 0};
+    static TOPPING_SAUCE = {price: 20, callories: 5};
+
+    addTopping(topping) {
+        this.topping.push(topping);
+    };
+
+    calculateCallories() {
+        const baseCallories = this.size.callories + this.stuffing.callories;
+        const toppingCallories = this.topping.reduce((acc, item) => acc + item.callories, 0);
+        let result = baseCallories + toppingCallories;
+        return `Callories: ${result}`
+    }
+
+    calculatePrice() {
+        const basePrice = this.size.price + this.stuffing.price;
+        const toppingPrice = this.topping.reduce((acc, item) => acc + item.price, 0);
+        let result = basePrice + toppingPrice;
+        return `Price: ${result}`
     }
 }
 
-function Apartment() {
-    this.inhabitantApartment = [];
-    this.addPerson = function(person) {
-        this.inhabitantApartment.push(person);
-    }
-}
-function House(maxApartment) {
-    this.apartments = [];
-    this.maxApartment = maxApartment;
-    this.addApartment = function(apartment) {
-        if(this.apartments.length < this.maxApartment){
-            this.apartments.push(apartment);
-        } else{
-            console.log('Кількість квартир в будинку досягла максимуму');
-        }
-    }
-}
 
-const joe = new Person("Joe", "male");
-const jina = new Person("Jina", "female");
-// const jorj = new Person("Jorj", "male");
 
-const apartment1 = new Apartment();
-const apartment2 = new Apartment();
-// const apartment3 = new Apartment();
+// // Перевірка
+// var hamburger = new Hamburger(Hamburger .SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 
-apartment1.addPerson(joe);
-apartment2.addPerson(jina);
-// apartment3.addPerson(jorj);
+// hamburger.addTopping(Hamburger.TOPPING_MAYO);
 
-const house = new House(2);
+// console.log(hamburger.calculateCallories());
 
-house.addApartment(apartment1);
-house.addApartment(apartment2);
-// ho
+// console.log(hamburger.calculatePrice());
+
+// hamburger.addTopping(Hamburger .TOPPING_SAUCE);
+
+// console.log(hamburger.calculatePrice());
