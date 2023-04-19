@@ -5,16 +5,6 @@
 // const userResult = result.join(' ')
 // alert(`Числа від 20 до 30 = ${userResult}`);
 
-
-// const result2 = []
-// for (let i = 10; i <= 100; i += 10) {
-//     result2.push(i*27 + 'грн')
-// }
-// const userResult2 = result2.join(', ')
-// alert(`git remote add origin https://github.com/pete/first_app.gitВивести дані з розрахунком вартості 10, 20, 30... 100 доларів 
-// ${userResult2}`);
-
-
 // const userText = +prompt('Введіть число N');
 // const result3 = []
 // for (let i = 1; i <= 100; i++) {
