@@ -1,0 +1,16 @@
+.btn {
+    position: absolute;
+    left: 720px;
+}
+.form {
+    margin: 25px;
+    background-color: rgb(203, 204, 140);
+    padding: 20px;
+    width: 810px;
+}
+.result {
+    font-size: 1.2rem;
+}
+input, select {
+    border: none;
+}
