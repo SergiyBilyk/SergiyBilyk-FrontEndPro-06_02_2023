@@ -11,3 +11,28 @@ li {
 .product-list {
     margin-top: 16px
 }
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min-content;
+}
+input {
+    margin: 25px 0;
+}
+label > input {
+    margin: 10px 0;
+}
+label {
+    position: relative;
+}
+.orderList {
+    text-align: center;
+}
+span {
+    color: red;
+    position: absolute;
+    left: 183px;
+    top: 12px;
+    width: max-content;
+}
