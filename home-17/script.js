@@ -214,14 +214,13 @@ function createSubmit() {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   dataForms = {
-    name: form.name.value,
+    name: form.name.value.trim(),
     city: city[form.city.selectedIndex],
     postNumber: form.postNumber.value,
     payment: form.payment.value,
     amount: form.amount.value,
     comment: form.comment.value,
   };
-
   if (validation(this) == true) {
     createOrder(dataForms);
   }
